@@ -1,0 +1,28 @@
+<html>
+<head>
+<script src="js/brython.js"></script>
+
+<script type="text/python">
+import time
+import html
+
+def on_complete(req):
+    if req.status==200 or req.status==0:
+        doc["zone"].text = req.text
+    else:
+        doc["zone"].text = "error "+req.text
+
+def go(url):
+    req = ajax()
+    req.on_complete = on_complete
+    req.open('GET',url,True)
+    req.send()
+
+go('ajax.html?foo=%s' %time.time())
+</script>
+
+</head>
+<body onload="brython()">
+<pre id="zone"></pre>
+</body>
+</html>

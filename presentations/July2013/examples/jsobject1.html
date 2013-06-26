@@ -1,0 +1,16 @@
+<html>
+<head>
+<script src="js/brython.js"></script>
+
+<script type="text/javascript">
+circle = {surface:function(r){return 3.14*r*r}}
+</script>
+<script type="text/python">
+doc['result'].text = JSObject(circle).surface(10)
+</script>
+
+</head>
+<body onload="brython()">
+<div id="result"></div>
+</body>
+</html>

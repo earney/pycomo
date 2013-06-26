@@ -1,0 +1,21 @@
+<html>
+<head>
+<script src="js/brython.js"></script>
+
+<script type="text/python">
+def myevent():
+    doc["out"].text="mouseover occurred"
+
+def myevent1():
+    doc["out"].text=""
+</script>
+
+</head>
+<body onload="brython()">
+
+<div onmouseover="myevent()" onmouseout="myevent1()"
+     style="width:100px;height:100px;background-color:#FF0000"></div>
+
+<div id="out"></div>
+</body>
+</html>

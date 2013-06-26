@@ -1,0 +1,30 @@
+<html>
+<head>
+<script src="js/brython.js"></script>
+
+<script type="text/python">
+from html import TABLE,TR,TH,TD
+table = TABLE()
+row = TR() # create a row
+# add header cells
+row <= TH("Country")
+row <= TH("Capital city")
+table <= row # add the row to the table
+
+# add a row
+row = TR()
+row <= TD("United States")+TD("Washington")
+table <= row
+
+# erase initial content
+doc['zone'].text = ''
+
+# insert table in the element
+doc['zone'] <= table
+</script>
+</head>
+
+<body onload="brython()">
+<div id="zone"></div>
+</body>
+</html>

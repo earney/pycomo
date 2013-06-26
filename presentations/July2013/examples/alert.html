@@ -1,0 +1,13 @@
+<html>
+<head>
+<script src="js/brython.js"></script>
+</head>
+<body onload="brython()">
+<script type="text/python">
+def echo():
+    alert(doc["zone"].value)
+</script>
+<input id="zone"><button onclick="echo()">click !</button>
+</body>
+</html>
+

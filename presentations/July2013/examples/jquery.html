@@ -1,0 +1,30 @@
+<html>
+<head>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js">
+</script>
+<script src="js/brython.js"></script>
+</head>
+
+<script type="text/python">
+  def toggle_color(element):
+      _divs=doc.get(tag="div")
+      for _div in _divs:
+          if _div.style.color != "blue":
+             _div.style.color = "blue"
+          else:
+             _div.style.color = "red"
+
+  _jQuery=JSObject(jQuery("body"))
+  _jQuery.click(toggle_color)
+
+</script>
+
+<body onload="brython()">
+  <div>Click here</div>
+  <div>to iterate through</div>
+  <div>these divs.</div>
+<script>
+</script>
+ 
+</body>
+</html>
